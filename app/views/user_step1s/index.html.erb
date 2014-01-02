@@ -1,0 +1,56 @@
+<%= render :partial => 'layouts/header' %>
+<br />
+<br />
+  <div class="row" >
+    <div class="span12 offset1 well" >
+<h3>Welcome to BizCentrik Source 2 Target mapping wizard</h3>
+<h4>Step 1</h4>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Project name</th>
+      <th>Phase name</th>
+      <th>Project urls</th>
+      <th>Subject area</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_step1s.each do |user_step1| %>
+      <tr>
+        <td><%= user_step1.project_name %></td>
+        <td><%= user_step1.phase_name %></td>
+        <td><%= user_step1.project_urls %></td>
+        <td><%= user_step1.subject_area %></td>
+        <td><%= link_to 'Show', user_step1 %></td>
+        <td><%= link_to 'Edit', edit_user_step1_path(user_step1) %></td>
+        <td><%= link_to 'Destroy', user_step1, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"icon-trash icon-white", :title => "Delete" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Next', new_user_step1_path %>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<%= render :partial => 'layouts/footer' %>

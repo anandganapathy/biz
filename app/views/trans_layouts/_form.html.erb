@@ -1,0 +1,40 @@
+<%= form_for(@trans_layout) do |f| %>
+  <% if @trans_layout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trans_layout.errors.count, "error") %> prohibited this trans_layout from being saved:</h2>
+
+      <ul>
+      <% @trans_layout.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table class="table table-bordered table-striped">
+<tbody>
+
+ <tr><td><%= radio_button_tag(:SOURCE_COLUMN_LAYOUT, "SOURCE COLUMN LAYOUT") %>
+  <%= label_tag(:SOURCE_COLUMN_LAYOUT, "SOURCE COLUMN LAYOUT") %></td>
+ <td> <%= radio_button_tag(:TARGET_COLUMN_LAYOUT, "TARGET_COLUMN_LAYOUT") %>
+  <%= label_tag(:TARGET_COLUMN_LAYOUT, "TARGET_COLUMN_LAYOUT") %></td>
+  <td><%= radio_button_tag(:Create_Custom_Layout, "Create Custom Layout") %>
+  <%= label_tag(:Create_Custom_Layout, "Create Custom Layout") %></td></tr>
+<br>
+<br>
+<tbody>
+
+   <td><%= link_to 'Apply ' %></td>
+
+
+
+
+   <td><%= link_to 'Cancel ' %></td>
+
+
+
+  <td><%= link_to 'Preview(give a view of the design of the spreadsheet)' %></td>
+
+
+
+<% end %>
+</table>

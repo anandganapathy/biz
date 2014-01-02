@@ -1,0 +1,83 @@
+<center><h3> Source wizard</h3></center>
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+<div class="well">
+<!--<%= session[:filepath] %>-->
+<!--<%= params %>-->
+<% 
+   rowary = Array.new
+   if session[:postfrm]==""
+   rowary  = @rowarraydisp 
+ else
+   rowary  = session[:postfrm]
+ end
+%>
+
+<% arg = params[:param1].to_i %>
+<% array_position = ((arg+rowary.size)-1).to_i %>
+<%
+  if(array_position != nil &&  params[:param1] != nil)
+   rowary[array_position]= ""
+  end
+ %>
+ <% argmnts =arg+1 %>
+  <%= form_for @resume do |f| %>
+  <table class="table table-bordered table-striped">
+    <tbody>
+    <% rowary.each_with_index  do |clmn, index| %>
+     <tr><td><b>Column <%= index+1 %></b></td><td><%= f.text_field index+1,:value =>clmn %></td></tr>
+    <% end %>
+    <tr><td>&nbsp;</td><td>
+     
+     <%= f.button "Update", :name => 'show', :type=> 'button', :onclick =>'fnUpdatebtn()', class: "btn btn-primary" %>
+     &nbsp;&nbsp;
+     <%= link_to 'Add New Column',:param1 =>argmnts, method: :addnew , class: "btn btn-secondary" %>
+    </td></tr>
+   </tbody>
+  </table>
+<% end %>
+</div>
+<script type="text/javascript" language="javascript">
+function fnUpdatebtn(){
+var frm = document.getElementById("new_resume");
+var varparameter = window.location.search.substring(1);
+
+if(varparameter != ""){
+  frm.action="update";
+}else{
+ frm.action="resumes/update";
+}
+frm.method="post";
+frm.submit();
+
+}
+</script>
+
+<table class="table table-bordered table-striped">
+<th>Lookup Data</th>
+ <tr><td>
+    <table>
+      <tr>
+      <% rowary.each_with_index  do |clmn, index| %>
+        <% if !clmn.nil? %>
+        <td><b><%= clmn%></b></td>
+        <% end %>
+      <% end %>
+    </tr>
+    <tr>
+    <%
+      i = 0
+    num = rowary.size
+    while i < num do
+      puts "<td>#{i}sdf</td>"
+      i +=1
+
+    end
+    %>
+</tr>
+    </table>  
+ </td></tr>
+</table>

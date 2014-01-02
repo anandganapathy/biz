@@ -1,0 +1,81 @@
+<center><h3>Target Update wizard</h3></center>
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+<div class="well">
+
+<% 
+   rowary = Array.new
+   csvdatary = Array.new
+   rowary  = @rowarraydisp 
+%>
+
+<% arg = params[:param1].to_i %>
+<% array_position = ((arg+rowary.size)-1).to_i %>
+<%
+  if(array_position != nil &&  params[:param1] != nil)
+   rowary[array_position]= ""
+  end
+ %>
+ <% argmnts =arg+1 %>
+  <%= form_for @resume1 do |f| %>
+  <table class="table table-bordered table-striped">
+    <tbody>
+    <% rowary.each_with_index  do |clmn, index| %>
+     <tr><td><b>Column <%= index+1 %></b></td><td><%= f.text_field index+1, :value =>clmn %></td></tr>
+    <% end %>
+    <tr><td>&nbsp;</td><td>
+     
+     <%= f.button "Update", :name => 'show', :type=> 'button', :onclick =>'fnUpdatebtn()', class: "btn btn-primary" %>
+     &nbsp;&nbsp;
+     <%= link_to 'Add New Column', :action=>'index', :param1 =>argmnts, method: :addnew , class: "btn btn-secondary" %>
+    </td></tr>
+   </tbody>
+  </table>
+<% end %>
+</div>
+<script type="text/javascript" language="javascript">
+function fnUpdatebtn(){
+var frm = document.getElementById("new_resume1s");
+frm.action="update";
+frm.method="post";
+frm.submit();
+
+}
+</script>
+
+<table class="table table-bordered table-striped">
+<th>Lookup Data</th>
+ <tr><td>
+    <table class="table table-bordered table-striped">
+      <tr>
+      <% rowary.each_with_index  do |clmn, index| %>
+        <% if !clmn.nil? %>
+        <td><b><%= clmn%></b></td>
+        <% end %>
+      <% end %>
+    </tr>
+    <% 
+    drow=0
+    dtrow = Array.new %>
+     <% dtrow = @datary %>
+     
+     <% while drow < dtrow.size do %>
+    <tr>      
+     <% 
+     
+  i=0
+  
+     while i < rowary.size  do %>
+     <% clmname = @csvclmnname[i]  %>
+     <td><%= dtrow[drow][clmname] %></td>
+   <% i +=1 %>
+  <% end %>
+    </tr>
+  <% drow +=1 %>
+  <% end %>
+    </table>  
+ </td></tr>
+</table>

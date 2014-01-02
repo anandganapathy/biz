@@ -1,0 +1,38 @@
+<%= render :partial => 'layouts/header' %>
+<br />
+<br />
+<center><h1>Create Transformation Layout</h1></center>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trans_layouts.each do |trans_layout| %>
+      <tr>
+        <td><%= link_to 'Show', trans_layout %></td>
+        <td><%= link_to 'Edit', edit_trans_layout_path(trans_layout) %></td>
+        <td><%= link_to 'Destroy', trans_layout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trans layout', new_trans_layout_path %>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<%= render :partial => 'layouts/footer' %>

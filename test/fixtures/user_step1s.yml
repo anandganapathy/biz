@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_name: MyString
+  phase_name: MyString
+  project_urls: MyString
+  subject_area: MyString
+
+two:
+  project_name: MyString
+  phase_name: MyString
+  project_urls: MyString
+  subject_area: MyString

@@ -1,0 +1,36 @@
+<%= form_for(@user_step2) do |f| %>
+  <% if @user_step2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_step2.errors.count, "error") %> prohibited this user_step2 from being saved:</h2>
+
+      <ul>
+      <% @user_step2.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :source_type %>
+
+     <select_tag "source_type",<option></option><option></option><option></option><option></option> <select id="source_type" name="source_type"><option>choose type</option><option>FlatFile</option>
+    <option>Excel</option><option>Database</option><option>recent_source</option></select>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_location %>     <%= f.text_field :source_location %>  <%= link_to "add", @new_resume_path, class: "btn btn-primary" %>
+  </div>
+  
+  <div class="field">
+  <%= f.label :Data_Sampler %><%= check_box_tag(:pet_dog) %><%= label_tag(:pet_dog, "Import ALL Data") %><%= check_box_tag(:pet_cat) %><%= label_tag(:pet_cat, "Import first 100 records") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_info %>
+    <%= f.text_area :source_info %>
+  </div>
+  <div class="actions">
+    <%= submit_tag  value="Next"%>
+  </div>
+<% end %>

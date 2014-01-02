@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Source type:</strong>
+  <%= @target.source_type %>
+</p>
+
+<p>
+  <strong>Source location:</strong>
+  <%= @target.source_location %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @target.data %>
+</p>
+
+<p>
+  <strong>Source info:</strong>
+  <%= @target.source_info %>
+</p>
+
+<%= link_to 'Edit', edit_target_path(@target) %> |
+<%= link_to 'Back',targets_path %>

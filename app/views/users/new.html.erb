@@ -1,0 +1,49 @@
+<br>
+<br>
+
+<%= form_for @users do |f| %>
+<% if @users.errors.any? %>
+<div class="error_messages">
+  <h2>Form is invalid</h2>
+  <ul>
+    <% for message in @user.errors.full_messages %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<br />
+<br />
+<br />
+<br />
+<div class="row-fluid">
+  <div class="offset4 span9">
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="well">
+          <div class="well-header">
+            <h2 class="centered">Sign Up</h2>
+          </div>
+          <div class="inner well">
+            <p>
+              <%= f.label :email %>
+              <%= f.text_field :email %>
+            </p>
+            <p>
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+            </p>
+            <p>
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation %>
+            </p>
+           <!--  <p class="button"><%= f.submit %></p> -->
+            <button class="btn btn-primary btn-block">Signup</p></button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

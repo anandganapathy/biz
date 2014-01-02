@@ -1,0 +1,24 @@
+<center><h3>Source  wizard</h3></center>
+<% if !@resume.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @resume.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="well">
+  
+  <%= form_for @resume, { multipart: true } do |f| %>
+    <table>
+    <tr><td><%= f.label :name , 'Select a Source Type : ' %></td><td><%= f.select :name, options_for_select(["Flat File","Excel spreadsheet", "Database" ], "Flat File") %></td></tr>
+    <tr><td><%= f.label :attachment, 'Source Location : ' %></td>
+        <td><%= f.file_field :attachment %></td></tr>
+    <tr><td><%= f.label :col_sept, 'Column Separator : ' %></td>
+        <td><%= f.text_field :col_sept %></td></tr>
+    
+    <tr><td></td><td><%= f.submit "Proceed Next", class: "btn btn-primary" %></td></tr>
+  <% end %>
+</div>

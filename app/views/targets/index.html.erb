@@ -1,0 +1,48 @@
+<%= render :partial => 'layouts/header' %>
+<br />
+<br />
+  <div class="row" />
+    <div class="span12 offset1 well" />
+<h3></h3>
+<h4>Step 2</h4>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Source type</th>
+      <th>Source location</th>
+      <th>Data</th>
+      <th>Source info</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @targets.each do |target| %>
+      <tr>
+        <td><%= target.source_type %></td>
+        <td><%= target.source_location %></td>
+        <td><%= target.data %></td>
+        <td><%= target.source_info %></td>
+        <td><%= link_to 'Show', target %></td>
+        <td><%= link_to 'Edit', edit_target_path(target) %></td>
+        <td><%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+s
+<br>
+
+<%= link_to 'Target', new_resume1_path %>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<%= render :partial => 'layouts/footer' %>
