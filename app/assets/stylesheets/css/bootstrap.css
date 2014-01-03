@@ -842,7 +842,7 @@ a.text-info:focus {
 }
 
 .text-success {
-  color: #468847;
+  color: #569843;
 }
 
 a.text-success:hover,
@@ -1580,7 +1580,7 @@ input[readonly],
 select[readonly],
 textarea[readonly] {
   cursor: not-allowed;
-  background-color: #555555;
+  background-color: #556666;
 }
 
 input[type="radio"][disabled],
@@ -2132,7 +2132,7 @@ legend + .control-group {
 
 table {
   max-width: 100%;
-  background-color: transparent;
+  background-color: #445538;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -2169,7 +2169,7 @@ table {
 }
 
 .table tbody + tbody {
-  border-top: 2px solid #222222;
+  border-top: 2px solid #22ff66;
 }
 
 .table .table {

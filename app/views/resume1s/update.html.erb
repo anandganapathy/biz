@@ -21,7 +21,7 @@
  %>
  <% argmnts =arg+1 %>
   <%= form_for @resume1 do |f| %>
-  <table class="table table-bordered table-striped">
+  <table >
     <tbody>
     <% rowary.each_with_index  do |clmn, index| %>
      <tr><td><b>Column <%= index+1 %></b></td><td><%= f.text_field index+1, :value =>clmn %></td></tr>
@@ -42,11 +42,11 @@ var frm = document.getElementById("new_resume1s");
 frm.action="update";
 frm.method="post";
 frm.submit();
-
 }
 </script>
 
-<table class="table table-bordered table-striped">
+<table 
+.>
 <th>Lookup Data</th>
  <tr><td>
     <table class="table table-bordered table-striped">

@@ -111,7 +111,7 @@ class ResumesController < ApplicationController
 
 
 
-private
+ private
   def resume_params
     params.require(:resume).permit(:name, :attachment, :col_sept, :resumes, :arysize)
   end
