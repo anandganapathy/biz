@@ -19,7 +19,7 @@
     <tr><td><%= f.label :col_sept, 'Column Separator : ' %></td>
         <td><%= f.text_field :col_sept %></td></tr>
         
-    
+   <tr><td> <%= check_box_tag(:pet_dog) %><%= f.label :Enable_Multiple_Source_data_import%></td></tr>
     <tr><td></td><td><%= f.submit "Proceed Next", class: "btn btn-primary" %></td></tr>
   <% end %>
 </div>
