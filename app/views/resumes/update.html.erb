@@ -1,9 +1,12 @@
-<center><h3> Source  wizard</h3></center>
+<center><h3> Source  wizard</h3><%= session[:step1_project_name] %> - <%= session[:step1_phase_name] %></center>
+<%= link_to "+ Source", new_resume_path %>
+<div style='float:right'><%= link_to "Proceed Next", new_resume1_path %></div>
 <% if !flash[:notice].blank? %>
   <div class="alert alert-info">
   <%= flash[:notice] %>
   </div>
 <% end %>
+
 <div class="well">
 
 <% 
@@ -45,6 +48,7 @@ frm.submit();
 
 }
 </script>
+
 
 <table class="table table-bordered table-striped">
 <th>Lookup Data</th>

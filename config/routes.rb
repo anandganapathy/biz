@@ -11,7 +11,7 @@ Biz::Application.routes.draw do
   resources :user_step1s
 
   resources :user_step2s
-
+ 
   
   get "resumes/index"
   post "resumes/update"

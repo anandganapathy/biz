@@ -1,4 +1,4 @@
-<center><h3>Source  wizard</h3></center>
+<center><h3>Source  wizard</h3> <%= session[:step1_project_name] %> - <%= session[:step1_phase_name] %></center>
 <% if !@resume.errors.empty? %>
   <div class="alert alert-error">
     <ul>
@@ -18,7 +18,11 @@
         <td><%= f.file_field :attachment %></td></tr>
     <tr><td><%= f.label :col_sept, 'Column Separator : ' %></td>
         <td><%= f.text_field :col_sept %></td></tr>
+        
     
     <tr><td></td><td><%= f.submit "Proceed Next", class: "btn btn-primary" %></td></tr>
   <% end %>
 </div>
+
+
+

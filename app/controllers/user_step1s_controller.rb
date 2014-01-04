@@ -27,7 +27,10 @@ class UserStep1sController < ApplicationController
 
     respond_to do |format|
       if @user_step1.save
-        format.html { redirect_to @user_step1, notice: 'User step1 was successfully created.' }
+        session[:step1_project_name]=@user_step1.project_name
+        session[:step1_phase_name]=@user_step1.phase_name
+        format.html { redirect_to '/resumes/new', notice: 'User step1 was successfully
+          reated.' }
        
       else
         format.html { render action: 'new' }

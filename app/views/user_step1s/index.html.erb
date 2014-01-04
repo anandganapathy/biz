@@ -1,10 +1,11 @@
 <%= render :partial => 'layouts/header' %>
 <br />
 <br />
+<center><h3>Welcome to BizCentrik Source 2 Target mapping wizard</h3></center>
   <div class="row" >
     <div class="span12 offset1 well" >
-<h3>Welcome to BizCentrik Source 2 Target mapping wizard</h3>
-<h4>Step 1</h4>
+
+<h4>User Step</h4>
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -32,8 +33,14 @@
 </table>
 
 <br>
+<%= link_to 'New Project', new_user_step1_path %>
 
-<%= link_to 'Next', new_user_step1_path %>
+
+
+
+
+
+<%= link_to 'GoTo Source Wizrad', new_resume_path %>
 </div>
 </div>
 

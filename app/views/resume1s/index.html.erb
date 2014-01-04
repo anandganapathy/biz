@@ -1,4 +1,4 @@
-<center><h3>Target  wizard</h3></center>
+<center><h3>Target  wizard</h3><%= session[:step1_project_name] %> - <%= session[:step1_phase_name] %></center>
 <% if !flash[:notice].blank? %>
   <div class="alert alert-info">
   <%= flash[:notice] %>

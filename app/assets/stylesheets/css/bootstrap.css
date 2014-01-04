@@ -351,11 +351,11 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #000000;
-  background-color: #ffff;
+  background-color: #B99E10;
 }
 
 a {
-  color: #33b5e5;
+  color: #33e5e5;
   text-decoration: none;
 }
 
@@ -878,7 +878,7 @@ h6 {
   font-family: inherit;
   font-weight: normal;
   line-height: 20px;
-  color: #666666;
+  color: ##53E011;
   text-rendering: optimizelegibility;
 }
 
@@ -2132,8 +2132,10 @@ legend + .control-group {
 
 table {
   max-width: 100%;
-  background-color: #445538;
+  background-color: #AD8723;
   border-collapse: collapse;
+  padding:10px;
+  color:#000;
   border-spacing: 0;
 }
 
@@ -2173,7 +2175,7 @@ table {
 }
 
 .table .table {
-  background-color: #060606;
+  background-color: #e6e6e6;
 }
 
 .table-condensed th,
@@ -6323,7 +6325,7 @@ html {
 
 body {
   min-height: 100%;
-  background-color: #ffffff;
+  background-color: #B99E10;
   color: #000000;
   /*background-image: -moz-linear-gradient(top, #060606, #252a30);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#060606), to(#252a30));
@@ -6925,7 +6927,7 @@ select:focus {
 
 legend,
 label {
-  color: #999999;
+  color: ##0A0808;
   border-bottom: 0px solid #222;
 }
 
