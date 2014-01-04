@@ -1,10 +1,11 @@
 <center><h3>Target Update wizard</h3><%= session[:step1_project_name] %> - <%= session[:step1_phase_name] %></center>
+<%= link_to "+ Target", new_resume1_path %>
 <% if !flash[:notice].blank? %>
   <div class="alert alert-info">
   <%= flash[:notice] %>
   </div>
 <% end %>
-<%= link_to '<<', user_step1s_path %>
+
 
 <div class="well">
 
